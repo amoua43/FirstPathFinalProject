@@ -1,0 +1,63 @@
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(198, 255, 198, 0.437);
+    }
+    header {
+        background: rgba(3, 124, 3, 0.828);
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .container {
+        display: flex;
+        margin: 20px;
+        color: rgb(0, 147, 0);
+
+    }
+    nav {
+        flex: 1;
+        background: rgba(198, 255, 198, 0.437);
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(24, 251, 217, 0.1);
+        margin-right: 20px;
+    }
+    nav a {
+        display: block;
+        padding: 10px;
+        color: rgb(59, 94, 59);
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+    nav a:hover {
+        background: #f4f4f4;
+    }
+    .main-content {
+        flex: 3;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+        background: rgba(198, 255, 198, 0.437);
+
+    }
+    .sidebar {
+        flex: 1;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+        background: rgba(198, 255, 198, 0.437);
+        margin-left: 20px;
+    }
+    .post {
+        background: #c4e2ff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
+    .profile {
+        margin-bottom: 20px;
+        padding: 10px;
+        background: #b3d9ff;
+        border-radius: 5px;
+    }
