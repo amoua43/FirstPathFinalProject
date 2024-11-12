@@ -2,62 +2,53 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: rgba(198, 255, 198, 0.437);
+        background-color :#fef7de9d;
     }
     header {
-        background: rgba(3, 124, 3, 0.828);
-        color: white;
+        background: #fff3ca;
+        color: #eb3f21;
         padding: 10px 20px;
         text-align: center;
     }
     .container {
         display: flex;
         margin: 20px;
-        color: rgb(0, 147, 0);
-
+        color: #eb3f21;
     }
     nav {
         flex: 1;
-        background: rgba(198, 255, 198, 0.437);
+        background: #fef7de9d;
         padding: 20px;
-        box-shadow: 0 0 10px rgba(24, 251, 217, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin-right: 20px;
+        border-radius: 15px;
+
     }
     nav a {
         display: block;
         padding: 10px;
-        color: rgb(59, 94, 59);
+        color: #eb3f21;
         text-decoration: none;
         margin-bottom: 10px;
     }
     nav a:hover {
-        background: #f4f4f4;
+        color: black;
+        background: #fff3ca;
     }
     .main-content {
         flex: 3;
         background: #fff;
         padding: 20px;
-        box-shadow: 0 0 10px rgb(255, 255, 255);
-        background: rgba(198, 255, 198, 0.437);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: #fef7de9d;
+        border-radius: 15px;
 
     }
-    .sidebar {
-        flex: 1;
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 0 10px rgb(255, 255, 255);
-        background: rgba(198, 255, 198, 0.437);
-        margin-left: 20px;
-    }
+
     .post {
-        background: #c4e2ff;
+        background: #fff3ca;
         padding: 15px;
         margin-bottom: 15px;
-        border-radius: 5px;
+        border-radius: 15px;
     }
-    .profile {
-        margin-bottom: 20px;
-        padding: 10px;
-        background: #b3d9ff;
-        border-radius: 5px;
-    }
+   
