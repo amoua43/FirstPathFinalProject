@@ -39,15 +39,13 @@ urlpatterns = [
 
 
 
-    path('layout/', views.layout, name="layout"),
+    # path('layout/', views.layout, name="layout"),
     path('about_us/', views.about_us, name="about_us"),
     path('contact_us/', views.contact_us, name="contact_us"),
     #path('projects_landing/', views.projects_landing, name="projects_landing"),
     path('events/', views.events, name="events"),
-    path('sign_up/', views.sign_up, name="sign_up"),
+    # path('sign_up/', views.sign_up, name="sign_up"),
 
     path('', views.landing_page, name="landing_page"), 
-
-    
 
 ]

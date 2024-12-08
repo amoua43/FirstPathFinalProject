@@ -6,10 +6,9 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic, Message, Project, Event
-from .forms import RoomForm, ProjectForm, EventForm
-from .models import Job
-from .forms import JobSearchForm
+from .models import Room, Topic, Message, Project, Event, Job
+from .forms import RoomForm, ProjectForm, EventForm, JobSearchForm
+
 
 
 
@@ -21,8 +20,7 @@ from .forms import JobSearchForm
 # ]
 
 
-
-'''def loginPage(request):
+def loginPage(request):
 
     page = 'login'
 
@@ -45,36 +43,11 @@ from .forms import JobSearchForm
         else:
             messages.error(request, 'Username OR password Does not exist')
     context = {'page' : page}
-    return render(request, 'base/login_registration.html', context)  
-'''
-
-def loginPage(request):
-
-    if request.user.is_authenticated:
-        return redirect('home')
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        try:
-            user = user.objects.get(username=username)
-        except:
-            messages.error(request, 'user does not exist!')
-        
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.error(request, 'Username OR password Does not exist')
-    context = {}
     return render(request, 'base/login_registration.html', context)
-
 
 def logoutUser(request):
     logout(request)
     return redirect('home')
-
 
 def registerPage(request):
     form = UserCreationForm()
