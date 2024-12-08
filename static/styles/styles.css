@@ -1,0 +1,223 @@
+/*main body of the landing page*/
+.landing_body{
+    width: 100%;
+    background-color: beige;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+/*custom navbar background color*/
+.custom-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #089206;
+    padding: 25px;
+    color: #fef7de9d;
+    box-shadow: 0 4px 6px #fef7de9d;
+}
+
+/*custom navbar text color*/
+.custom-navbar .navbar-nav .nav-link{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 1px;
+    padding: 2px;
+}
+.custom-navbar .nav-link li{
+    display: inline-block;
+}
+.custom-navbar .nav-item .nav-link{
+    text-decoration: none;
+    color: white !important;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/*custom navbar hover color*/
+.custom-navbar .nav-item .nav-link:hover{
+    background-color: black;
+    color: #fef7de;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+/*custom navbar brand color*/ /* need to come back and fix hover effect or add logo img*/
+.custom-navbar .navbar-brand{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.custom-navbar .navbar-brand::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fef7de9d;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+.custom-navbar .navbar-brand:hover::before{
+    transform: translateX(0);
+}
+.custom-navbar .navbar-brand:hover{
+    color: #fef7de9d;
+    transition: color 0.3s ease;
+}
+
+/*login button styling*/
+.custom-navbar .btn-outline-success{
+    background-color: black;
+    color: white !important;
+    border-color: black;
+    border-radius: 32px;
+    border-style: solid;
+    border-width: 2px;
+}
+.custom-navbar .btn-outline-success:hover{
+    background-color: rgb(130, 255, 130);
+    color: black !important;
+}
+.custom-navbar .btn-outline-success:active{
+    background-color: rgb(130, 255, 130) !important;
+    color: black !important;
+    border-color: rgb(130, 255, 130) !important;
+}
+
+/*This edits the join now button*/
+.custom-navbar .btn-join-now{
+    border-radius: 32px;
+    color: white !important;
+}
+.custom-navbar .btn-join-now:hover{
+    background-color: rgb(130, 255, 130);
+    color: black !important;
+    border-radius: 32px;
+}
+.custom-navbar .btn-join-now:active{
+    background-color: rgb(130, 255, 130) !important;
+    border-color: rgb(130, 255, 130);
+}
+
+/* This edits/styles the landing page*/
+.content{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: black;
+    position: relative;
+}
+/*This edits the text under 'FirstPath'*/
+.content .par{
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+/* This edits the positioniing of the text*/
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 100px;
+    padding-left: 20px;
+    margin-top: 17%;
+    letter-spacing: 2px;
+}
+
+/* This edits the positioning of the footer*/
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: beige;
+    color: black;
+    text-align: center;
+    line-height: 60px;
+}
+
+/* Contact Us Section Styling */
+.contact_us {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+h2 {
+    font-size: 24px;
+    color: #555;
+}
+.contact_us p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+    text-align: center;
+}
+/* Contact Information Container */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Reduced gap between containers */
+    flex-wrap: wrap; /* Allow items to stack on small screens */
+    margin-top: 30px;
+}
+
+.contact-info .contact-phone,
+.contact-info .contact-email,
+.contact-info .contact-address {
+    width: 250px;
+    height: 200px; /* Adjusted height */
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px; /* Reduced padding inside the boxes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Align text to the left */
+}
+
+.contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-info a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/*About Us editing*/
+.about_us {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+.about_us h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+

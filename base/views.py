@@ -21,7 +21,8 @@ from .forms import JobSearchForm
 # ]
 
 
-def loginPage(request):
+
+'''def loginPage(request):
 
     page = 'login'
 
@@ -44,11 +45,36 @@ def loginPage(request):
         else:
             messages.error(request, 'Username OR password Does not exist')
     context = {'page' : page}
+    return render(request, 'base/login_registration.html', context)  
+'''
+
+def loginPage(request):
+
+    if request.user.is_authenticated:
+        return redirect('home')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        try:
+            user = user.objects.get(username=username)
+        except:
+            messages.error(request, 'user does not exist!')
+        
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Username OR password Does not exist')
+    context = {}
     return render(request, 'base/login_registration.html', context)
+
 
 def logoutUser(request):
     logout(request)
     return redirect('home')
+
 
 def registerPage(request):
     form = UserCreationForm()
@@ -83,6 +109,11 @@ def home(request):
     context = {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'room_messages': room_messages}
     return render(request, 'base/home.html', context)
 
+
+
+
+
+
 def room(request, pk):
     room = Room.objects.get(id=pk)
     room_messages = room.message_set.all().order_by('-created')
@@ -100,6 +131,8 @@ def room(request, pk):
 
     context = {'room' : room, 'room_messages': room_messages, 'participants':participants}
     return render(request, 'base/room.html', context)
+
+
 
 def userProfile(request, pk):
     user = User.objects.get(id=pk)
@@ -126,6 +159,8 @@ def createRoom(request):
     return render(request, 'base/room_form.html', context)
 
 
+
+
 @login_required(login_url='/login')
 def updateRoom(request, pk):
     room = Room.objects.get(id=pk)
@@ -143,6 +178,9 @@ def updateRoom(request, pk):
     context = {'form' : form}
     return render(request, 'base/room_form.html', context)
 
+
+
+
 @login_required(login_url='/login')
 def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
@@ -154,6 +192,8 @@ def deleteRoom(request, pk):
         room.delete()
         return redirect('home')
     return render(request, 'base/delete.html', {'obj':room})
+
+
 
 
 @login_required(login_url='/login')
@@ -258,3 +298,31 @@ def job_description(request,pk):
     context = {'job1': job1}
     #render the job description HTML template with the job object as context
     return render(request,'base/job_description.html', context)
+
+
+
+
+def layout(request):
+    return render(request, 'base/layout.html')
+def about_us(request):
+    return render(request, 'base/about_us.html')
+def contact_us(request):
+    return render(request, 'base/contact_us.html')
+# def projects_landing(request):
+#     return render(request, 'base/projects.html')
+def events(request):
+     return render(request, 'base/events.html') 
+def sign_up(request):
+     return render(request, 'base/sign_up.html')
+#def loginPage(request):
+#    return render(request, 'base/login.html')
+def landing_page(request):
+    return render(request, 'base/landing_page.html')
+
+
+
+
+
+
+
+
