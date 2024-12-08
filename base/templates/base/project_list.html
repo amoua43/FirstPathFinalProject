@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+
+<h1>Projects</h1>
+<div>
+    <a href="{% url 'add-project' %}">+ Add New Project</a>
+</div>
+<hr>
+<ul>
+    {% for project in projects %}
+    <li>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        {% if project.link %}
+        <a href="{{ project.link }}" target="_blank">View Project</a>
+        {% endif %}
+        <p>Created by: {{ project.user.username }} on {{ project.created|date:"F j, Y" }}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

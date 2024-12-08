@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Events</h1>
+
+
+<a href="{% url 'create-event' %}">+ Add Event</a>
+<hr>
+<ul>
+    {% for event in events %}
+    <li>
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Time:</strong> {{ event.time }}</p>
+        <p><strong>Price:</strong> {{ event.major }}</p>
+    </li>
+    <hr>
+    {% empty %}
+    <p>No events found.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

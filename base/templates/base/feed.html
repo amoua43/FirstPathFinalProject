@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="groups-container">
+    {% for room in rooms %}
+    <div class="group-card">
+        <h3>Group Topic: <a href="{% url 'room' room.id %}">{{ room.name }}</a></h3>
+
+        <small class="group-topic">{{ room.topic.name }} - {{room.description}}</small>
+
+        <h5><a href="{% url 'user-profile' room.host.id %}">Creator: {{ room.host.username }}</a></h5>
+        
+        <h6>
+        {% if request.user == room.host %}
+        <div>
+            <a href="{% url 'update-room' room.id %}" class="edit-btn">Edit</a>
+            <a href="{% url 'delete-room' room.id %}" class="delete-btn">Delete</a>
+        </div>
+        {% endif %}
+        </h6>  
+        <hr>
+    </div>
+    {% endfor %}
+</div>

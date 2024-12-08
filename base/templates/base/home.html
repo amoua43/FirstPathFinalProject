@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h3></h3>
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+</style>
+
+<div class="container"> <!-- Main contain start -->
+    {% include 'base/major_job.html' %}
+
+    <div> <!-- Rooms start-->
+        <h5>Current Groups: {{room_count}}</h5>
+        <hr>
+        <p>Can't find a group that sparks your interest? <a href="{% url 'create-room' %}">Create your own group </a>and get started!</p>
+        <hr>
+        {% include 'base/feed.html' %}
+
+    </div> <!--Rooms end-->
+
+</div> <!-- Main contain end -->
+
+
+{% endblock content %}

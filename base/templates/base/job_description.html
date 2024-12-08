@@ -1,0 +1,13 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="content-border">
+    <h1>Job Description</h1>
+    <h2>Job Title : {{job1.jobtitle|safe}}</h2>
+    <div>
+        {{job1.description|safe}}
+    </div>
+</div>
+{% endblock content %}
+

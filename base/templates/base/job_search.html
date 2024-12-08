@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="content-border">
+    <h1>Job Search</h1>
+    <form method="POST" action="{% url 'job-details' %}">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <label for="title">Job Title:</label>
+        <input type="text" id="title" name="title" value="{{ form.title.value | default:'' }}">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="{{ form.location.value | default:'' }}">
+        <button type="submit">Search</button>
+    </form>
+
+
+    <div class="job-list">
+        {% if jobs %}
+            {% for job in jobs %}
+                <div class="job-item">
+                    <h2 class="job-title">
+                        <a href="{% url 'job_description' job.pk %}">{{ job.jobtitle }}</a>
+                    </h2>
+                    <p><a href="{% url 'job_description' job.pk %}">{{ job.jobtitle }}</a> at {{ job.compname }}</p>
+                    <p><strong>Location:</strong> {{ job.location }}</p>
+                    <p><strong>Company Description:</strong> {{ job.compdesc }}</p>
+                    <p><strong>Company Location:</strong> {{ job.complocation }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No jobs match your search criteria.</p>
+        {% endif %}
+    </div>
+(/div>)
+
+{% endblock%}
+
+
+
