@@ -111,7 +111,7 @@ def about_us(request):
     return render(request, 'base/about_us.html')
 def contact_us(request):
     return render(request, 'base/contact_us.html')
-def projects(request):
+def projects_landing(request):
     return render(request, 'base/projects.html')
 def events(request):
     return render(request, 'base/events.html') 
